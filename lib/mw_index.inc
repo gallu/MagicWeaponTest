@@ -23,6 +23,7 @@ class mw_index extends base_model_front_base {
 //処理
 public function execute() {
 //print "Trap 1\n";
+//var_dump($this->get_db());
 
   // レイアウトをoffにする
   $this->set_layout_filename('');
