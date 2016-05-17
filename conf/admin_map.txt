@@ -1,0 +1,6 @@
+# ´ðËÜ
+index     = basic_model/simple_put_model.inc:simple_put_model index.tpl
+
+login     = admin/:
+top       = admin/top.inc:top top.tpl
+

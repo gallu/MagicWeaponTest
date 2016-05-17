@@ -1,0 +1,7 @@
+# ベース
+index       =  mw_index.inc:mw_index index.tpl
+
+# form 入力 / 確認 / 終了
+form_input     = : .
+form_confirm   = : .
+form_fin       = : .

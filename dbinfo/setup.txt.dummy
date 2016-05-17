@@ -1,0 +1,4 @@
+-- setup.txt(setup_dev.txt, setup_re.txt)という名前で以下のような情報を保持しておきます。以下はダミーです
+create database hogehoge;
+grant ALTER, CREATE, DELETE, DROP, INDEX, INSERT, LOCK TABLES, SELECT, UPDATE on hogehoge.* to 'hogehoge'@'localhost' identified by 'hogehoge';
+flush privileges ;
