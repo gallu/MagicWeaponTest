@@ -35,6 +35,7 @@ public function execute() {
   // 表示
   $this->get_conv()->set('form', $form_test_c->get_all_view_values());
   $this->set_csrf_token();
+//var_dump($_SESSION);
 
   //
   return ;

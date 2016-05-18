@@ -40,19 +40,6 @@ public function execute(){
   // XXX よしなに「認証失敗したよ」系処理
 }
 
-// CSRFトークンの登録
-protected function set_csrf_token() {
-  $this->_set_csrf_token('front');
-}
-
-// CSRFトークンの確認
-protected function is_csrf_token() {
-  return $this->_is_csrf_token('front');
-}
-
-
-
-
 //private:
 
 } // end of class
