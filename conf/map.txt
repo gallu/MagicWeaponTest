@@ -5,3 +5,8 @@ index       =  mw_index.inc:mw_index index.tpl
 form_input     = : .
 form_confirm   = : .
 form_fin       = : .
+
+# json出力テスト
+json_output    = :
+# csv出力テスト
+csv_output     = :
