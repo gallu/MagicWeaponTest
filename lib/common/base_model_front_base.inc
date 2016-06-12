@@ -14,18 +14,6 @@ require_once('common/base_model_base.inc');
 
 abstract class base_model_front_base extends base_model_base {
 
-// 初期設定：レイアウトを有効にしておく
-public function initialize() {
-  // 親呼んで
-  $r = parent::initialize();
-
-  // 「１回だけ動かしたい」処理
-  if (0 == $this->get_recursive_depth()) {
-    // 一旦、デフォルトではレイアウトをonにしておく
-    $this->set_layout_filename('layout.tpl');
-  }
-}
-
 
 // 空メソッド。「認証が必要なmodel」は、このメソッドを上書き(orverwrite)して処理を実装
 public function execute_auth(){}
