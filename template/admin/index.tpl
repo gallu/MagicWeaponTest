@@ -1,17 +1,16 @@
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
-  <title>¥í¥°¥¤¥ó(´ÉÍý²èÌÌ)</title>
+  <title>ãƒ­ã‚°ã‚¤ãƒ³(ç®¡ç†ç”»é¢)</title>
  </head>
  <body>
   <form action="./admin.php" method="post">
-    <legend>´ÉÍý²èÌÌ¤Î¥í¥°¥¤¥ó</legend>
-<!-- %%%login_error%%%<br> -->
-$$$is_login_error$$$<p class="alert">¥í¥°¥¤¥ó¤Ç¥¨¥é¡¼¤¬È¯À¸¤·¤Þ¤·¤¿¡£ID¤È¥Ñ¥¹¥ï¡¼¥É¤òÆþ¤ì¤Ê¤ª¤·¤Æ¤ß¤Æ¤¯¤À¤µ¤¤</p>$$$/is_login_error$$$
+    ç®¡ç†ç”»é¢ã®ãƒ­ã‚°ã‚¤ãƒ³
+{if true == $is_login_error}<p class="alert">ãƒ­ã‚°ã‚¤ãƒ³ã§ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚IDã¨ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’å…¥ã‚ŒãªãŠã—ã¦ã¿ã¦ãã ã•ã„</p>{/if}
     <input type="hidden" id="c" name="c" value="login" />
     <dl>
      <dt> <label for="id">ID</label> </dt>
-     <dd> <input type="text" id="id" name="id" value="%%%id%%%" /> </dd>
+     <dd> <input type="text" id="id" name="id" value="{$id}" /> </dd>
      <dt> <label for="pass">pass</label> </dt>
      <dd> <input type="password" id="pass" name="pass" value="" /> </dd>
      <dt>&emsp;</dt>

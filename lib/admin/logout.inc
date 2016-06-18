@@ -1,8 +1,7 @@
 <?php
 
 /***************************************************
- * ログイン後トップ画面
- *
+ * ログアウト画面
  *
  * @package
  * @access  public
@@ -13,9 +12,8 @@
 
 require_once('common/base_model_admin_base.inc');
 
-class top extends base_model_admin_base {
+class logout extends base_model_admin_base {
 
-//
 public function initialize() {
   //
   parent::initialize();
@@ -26,11 +24,15 @@ public function initialize() {
 
 //処理
 public function execute_auth() {
-//print "Trap 1\n";
-//print 'uid is ' . $this->get_uid() . "<br>\n";
 
-  //
-  return ;
+  // 認可用インスタンス取得
+  $authorization_o = $this->get_authorization();
+
+  // ログアウト処理
+  $authorization_o->auth_off();
+
+  // XXX 「ログアウトしました」Pageに行ってもいいんだけど、一旦、無味乾燥に「非ログインtop」へ移動
+  $this->redirect('./admin.php');
 }
 
 } // end of class

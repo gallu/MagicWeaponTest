@@ -1,6 +1,20 @@
 # 基本
-index     = basic_model/simple_put_model.inc:simple_put_model index.tpl
+index     = admin/simple_put_model.inc:simple_put_model index.tpl
 
+#
 login     = admin/:
-top       = admin/top.inc:top top.tpl
+top       = admin/: .
+logout    = admin/:
 
+# 管理ユーザの管理系(ロール付きで)
+admin_user_list      = admin/: .
+admin_user_detail    = admin/: .
+admin_user_add       = admin/: .
+admin_user_add_fin   = admin/: .
+admin_user_edit      = admin/: .
+admin_user_edit_fin  = admin/: .
+admin_user_del       = admin/: .
+admin_user_del_fin   = admin/: .
+# ロックテーブルがある前提で、ロック系
+admin_user_lock      = admin/: .
+admin_user_unlock    = admin/: .
