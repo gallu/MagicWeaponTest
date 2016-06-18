@@ -12,7 +12,6 @@
  ***************************************************/
 
 require_once('common/base_model_front_base.inc');
-require_once('clump/form_test_clump.inc');
 
 class form_confirm extends base_model_front_base {
 
