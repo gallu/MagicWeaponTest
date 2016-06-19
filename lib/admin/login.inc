@@ -61,7 +61,7 @@ public function execute() {
   }
 
   //
-  $this->redirect('./admin.php?c=top');
+  $this->redirect_command('top');
 }
 
 } // end of class

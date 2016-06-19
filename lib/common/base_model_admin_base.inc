@@ -21,7 +21,32 @@ public function initialize() {
   parent::initialize();
 
   // デフォルトで「必要なロール」は一般権限にしておく
+  // XXX 変更する場合は各model継承先のinitialize()メソッドで上書きする
   $this->set_need_role_nomal();
+
+/*
+  // 「権限をまとめて管理する」なら、ここで以下のように書いても良い
+  // XXX 数が一番多いのをdefaultにすると記述が楽になります！！
+  switch($this->get_my_name()) {
+    // 権限anyなコマンド
+    case 'top':
+    case 'logout':
+    case 'any_dummy':
+      $this->set_need_role_any();
+      break;
+
+    // 一般権限
+    case 'nomal_dummy':
+      $this->set_need_role_nomal();
+      break;
+
+    // デフォルトは「管理者権限」
+    default:
+      $this->set_need_role_admin();
+      break;
+  }
+*/
+
 }
 
 // 空メソッド。「認証が必要なmodel」は、このメソッドを上書き(orverwrite)して処理を実装
@@ -37,7 +62,7 @@ protected function get_authorization() {
   $authorization_o->set_config($this->get_config());
 
   // ロックテーブルのclumpを設定(ロックテーブルがある場合)
-  //$authorization_o->set_user_lock_clump($this->get_clump($this->get_config()->find('rock_table') . '_clump'));
+  $authorization_o->set_user_lock_clump($this->get_clump($this->get_config()->find('rock_table') . '_clump'));
 
   //
   return $authorization_o;
@@ -52,8 +77,8 @@ public function execute(){
   // 認可処理
   if (false === $authorization_o->is_auth()) {
     // XXX よしなに「認証失敗したよ」系処理
-    // 一旦、top画面に突き返す(必要なら「認可でけんかったよ」エラー画面を別途作成してそちらにforwardさせる)
-    $this->redirect('./admin.php');
+    // 一旦、index画面に突き返す(必要なら「認可でけんかったよ」エラー画面を別途作成してそちらにforwardさせる)
+    $this->redirect_command('');
     return ;
   }
 
@@ -67,7 +92,7 @@ public function execute(){
 //var_dump($user_role & $this->get_need_role());
   if ( (0 !== $this->get_need_role()) && (0 === ($user_role & $this->get_need_role()))) {
     // 一旦、top画面に突き返す(必要なら「権限ないよ！！」エラー画面を別途作成してそちらにredirectさせる)
-    $this->redirect('./admin.php?c=top');
+    $this->redirect_command('top');
     return ;
   }
 

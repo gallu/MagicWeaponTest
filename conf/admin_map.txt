@@ -6,6 +6,9 @@ login     = admin/:
 top       = admin/: .
 logout    = admin/:
 
+# 静的な画面(非ログインでも閲覧可能)
+static_1  = admin/simple_put_model.inc:simple_put_model static_1.tpl
+
 # 管理ユーザの管理系(ロール付きで)
 admin_user_list      = admin/: .
 admin_user_detail    = admin/: .
@@ -13,8 +16,15 @@ admin_user_add       = admin/: .
 admin_user_add_fin   = admin/: .
 admin_user_edit      = admin/: .
 admin_user_edit_fin  = admin/: .
-admin_user_del       = admin/: .
+admin_user_edit_pass      = admin/: .
+admin_user_edit_pass_fin  = admin/: .
 admin_user_del_fin   = admin/: .
 # ロックテーブルがある前提で、ロック系
 admin_user_lock      = admin/: .
 admin_user_unlock    = admin/: .
+
+# 一般ユーザ用ダミー画面
+nomal_dummy   = admin/: .
+
+# anyユーザ用ダミー画面
+any_dummy   = admin/: .
