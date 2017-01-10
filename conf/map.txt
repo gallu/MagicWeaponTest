@@ -10,3 +10,6 @@ form_fin       = : .
 json_output    = :
 # csv出力テスト
 csv_output     = :
+
+# マルチバイトテスト
+mb_test        = : .
