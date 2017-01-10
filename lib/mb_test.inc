@@ -31,7 +31,8 @@ public function execute() {
   $data = array();
   while($res->fetch()) {
     //
-    $data[] = $res->get_row();
+    $wk = $res->get_row();
+    $data[] = $wk;
   }
 //var_dump($data);
 
